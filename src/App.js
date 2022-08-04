@@ -1,11 +1,20 @@
 import React from "react";
-import { ImgSlider, Navbar } from "./components";
+import { Header, Navbar } from "./components";
+import { Routes, Route } from "react-router-dom";
+import { Detail, Home, List } from "./pages";
 const App = () => {
   return (
     <div>
-      <Navbar>
-        <ImgSlider />
-      </Navbar>
+      <Navbar />
+      <Routes>
+        <Route path="/">
+          <Route index element={<Home />} />
+          <Route path="places">
+            <Route index element={<List />} />
+            <Route path=":id" element={<Detail />} />
+          </Route>
+        </Route>
+      </Routes>
     </div>
   );
 };

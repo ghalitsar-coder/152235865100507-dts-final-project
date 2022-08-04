@@ -1,57 +1,41 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const Navbar = ({ children }) => {
+const Navbar = () => {
   return (
-    <div className="drawer">
-      <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
-      <div className="drawer-content flex flex-col">
-        {/* <!-- Navbar --> */}
-        <div className="w-full navbar bg-base-300">
-          <div className="flex-none lg:hidden">
-            <label htmlFor="my-drawer-3" className="btn btn-square btn-ghost">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                className="inline-block w-6 h-6 stroke-current"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M4 6h16M4 12h16M4 18h16"
-                ></path>
-              </svg>
-            </label>
-          </div>
-          <div className="flex-1 px-2 mx-2">Navbar Title</div>
-          <div className="flex-none hidden lg:block">
-            <ul className="menu menu-horizontal">
-              {/* <!-- Navbar menu content here --> */}
-              <li>
-                <a>Navbar Item 1</a>
-              </li>
-              <li>
-                <a>Navbar Item 2</a>
-              </li>
-            </ul>
-          </div>
+    <div className="bg-white/25 backdrop-blur-md fixed left-0 right-0 z-[99999] ">
+      <nav className="w-[85%] mx-auto  flex items-center justify-between font-[Poppins] p-3 ">
+        <div className="">
+          <ul className="flex items-center gap-x-3">
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/places">Places</Link>
+            </li>
+            <li>
+              <Link to="/">Help</Link>
+            </li>
+          </ul>
         </div>
-        {/* <!-- Page content here --> */}
-        <div className="my-10">{children}</div>
-      </div>
-      <div className="drawer-side">
-        <label htmlFor="my-drawer-3" className="drawer-overlay"></label>
-        <ul className="menu p-4 overflow-y-auto w-80 bg-base-100">
-          {/* <!-- Sidebar content here --> */}
-          <li>
-            <a>Sidebar Item 1</a>
-          </li>
-          <li>
-            <a>Sidebar Item 2</a>
-          </li>
-        </ul>
-      </div>
+        <div className="">
+          <ul className="flex items-center gap-x-3">
+            <li>
+              {" "}
+              <Link to="/auth">Sign In</Link>
+            </li>
+            <li>
+              {" "}
+              <Link
+                to="/auth"
+                className="bg-primary text-white rounded-xl px-3 py-2 "
+              >
+                Sign Up
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </nav>
     </div>
   );
 };

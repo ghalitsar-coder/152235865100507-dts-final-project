@@ -1,10 +1,36 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@layer utilities {
-  .boxShadow {
-    box-shadow: rgb(0, 0, 0 / 69%) 0px 26px 30px 10px,
-      rgb(0, 0, 0 / 73%) 0px 16px 10px -10px;
-  }
+.banner {
+  background: url("./assets/bg/nature/b2.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  object-fit: fill;
+  height: 100%;
+  width: 100%;
+}
+.bannerList {
+  background: url("./assets/newBg/n3.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  object-fit: fill;
+  height: 100%;
+  width: 100%;
+}
+
+.card.image-full:before {
+  opacity: 0.3 !important;
+  transition: 300;
+}
+.card.image-full:hover:before {
+  opacity: 0.5 !important;
 }
