@@ -1,7 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 const Card = ({ cardClass, image }) => {
   return (
-    <div
+    <Link to={`/places/${1}`}
       className={`card transition-opacity cursor-pointer  ${cardClass} bg-base-100 shadow-xl   rounded-xl image-full `}
     >
       <figure>
@@ -11,7 +13,7 @@ const Card = ({ cardClass, image }) => {
         <h2 className=" font-semibold">Hawai</h2>
         <p className="font-extralight">1264 Stay</p>
       </div>
-    </div>
+    </Link>
   );
 };
 

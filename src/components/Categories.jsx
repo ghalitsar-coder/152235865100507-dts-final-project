@@ -6,25 +6,59 @@ import { VscSymbolArray } from "react-icons/vsc";
 import { IoIosBrush } from "react-icons/io";
 import { BsCreditCard2Front } from "react-icons/bs";
 
-const Category = ({item}) => {
+const Category = ({ item }) => {
   return (
-    <Link to={`/all-jobs/${item}`}>
+    <Link to={`/places`}>
       <div className="shadow-lg rounded-lg p-5 ">
-        <div className="h-10 w-10 bg-cyan-300 shadow-lg rounded-lg flex ">
-          <MdWork className="text-cyan-500 m-auto " fontSize={"small"} />
+        <div className={`h-10 w-10 ${item.color} shadow-lg rounded-lg flex `}>
+          <p className="text-lg font-semibold m-auto ">{item.icon}</p>
         </div>
-        <h2 className="text-lg font-semibold my-2">
-          Bussiness <br /> development
-        </h2>
-        <p className="font-sm text-slate-400">
-          Lorem ipsum dolor sit amet consectetur...
-        </p>
+        <h2 className="text-lg font-semibold my-2">{item.name}</h2>
+        <p className="font-sm text-slate-400">{item.desc}</p>
       </div>
     </Link>
   );
 };
 
 const Categories = () => {
+  const cat = [
+    {
+      name: "Hotels",
+      desc: "Diam suspendisse sagittis dapibus nunc facilisis augue mollis congue",
+      icon: <MdWork />,
+      color: "bg-red-400",
+    },
+    {
+      name: "Mountain",
+      desc: "Libero bibendum tincidunt diam odio a mattis proin",
+      icon: <MdComputer />,
+      color: "bg-pink-400",
+    },
+    {
+      name: "Beach",
+      desc: "Sed posuere volutpat luctus accumsan justo scelerisque consectetur fermentum",
+      icon: <MdOutlineSettingsEthernet />,
+      color: "bg-green-400",
+    },
+    {
+      name: "Lake",
+      desc: "Ultricies sit lorem sagittis eros viverra ex suscipit",
+      icon: <VscSymbolArray />,
+      color: "bg-sky-400",
+    },
+    {
+      name: "Travel",
+      desc: "Scelerisque adipiscing sodales nostra lobortis nullam cubilia mus montes",
+      icon: <IoIosBrush />,
+      color: "bg-purple-400",
+    },
+    {
+      name: "Stay",
+      desc: "Risus mus penatibus ridiculus morbi curae nostra sed mi",
+      icon: <BsCreditCard2Front />,
+      color: "bg-orange-400",
+    },
+  ];
   return (
     <div className="my-56">
       <div className="container mx-auto  flex flex-col md:flex-row  md:gap-20 p-4 ">
@@ -46,8 +80,8 @@ const Categories = () => {
           </h1>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {["a", "b", "c", 1, 1,2].map((item,idx) => (
-              <Category key={idx +"item"} item={item} />
+            {cat.map((item, idx) => (
+              <Category key={idx + "item"} item={item} />
             ))}
           </div>
         </div>

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { format } from "date-fns";
 import { useDispatch, useSelector } from "react-redux";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { Header, ListPerson } from "../components";
 import { FaCalendarAlt } from "react-icons/fa";
 import { MdLocationOn } from "react-icons/md";
@@ -10,7 +10,8 @@ import { DateRange } from "react-date-range";
 import { setForm, setOptionsTravel } from "../redux/bookingSlice";
 import { a8, a7 } from "../assets";
 
-const ResultItem = () => {
+const ResultItem = ({ item }) => {
+  const navigate = useNavigate();
   return (
     <div className="border rounded-lg font-[Poppins] shadow-md p-3 flex flex-col lg:flex-row  gap-4  items-stretch ">
       <div className="flex-1 shrink-0 ">
@@ -45,7 +46,10 @@ const ResultItem = () => {
         <div className="flex flex-col text-right justify-end">
           <h2 className="font-bold">$112</h2>
           <p className="text-slate-600 font-light">Includes taxes and fees</p>
-          <button className="p-2 bg-primary text-white rounded-md">
+          <button
+            className="p-2 bg-primary text-white rounded-md"
+            onClick={() => navigate(`/places/${item}`)}
+          >
             See availability
           </button>
         </div>
@@ -216,11 +220,9 @@ const List = () => {
           </form>
         </div>
         <div className=" flex-[3] grid gap-y-9 ">
-          <ResultItem />
-          <ResultItem />
-          <ResultItem />
-          <ResultItem />
-          <ResultItem />
+          {[1, 2, 3, 4, 5, 6].map((item) => (
+            <ResultItem key={item} item={item} />
+          ))}
         </div>
       </div>
     </div>
