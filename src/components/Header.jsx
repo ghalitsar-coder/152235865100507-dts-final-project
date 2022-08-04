@@ -5,7 +5,7 @@ import { HiOutlineChevronLeft, HiOutlineChevronRight } from "react-icons/hi";
 import { BiSearch } from "react-icons/bi";
 import { FaCalendarAlt } from "react-icons/fa";
 import { format } from "date-fns";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { setForm, setOptionsTravel } from "../redux/bookingSlice";
 import ListPerson from "./ListPerson";
@@ -129,8 +129,6 @@ const HeaderSearch = () => {
   );
 };
 
-
-
 const Header = ({ searchBar, bg }) => {
   return (
     <div
@@ -152,7 +150,7 @@ const Header = ({ searchBar, bg }) => {
             destination information and inspirations from us
           </p>
           <button className="btn w-max mx-auto    rounded-lg shadow-md">
-            Travel Now
+            <Link to="/places">Travel Now</Link>
           </button>
         </div>
         {searchBar && <HeaderSearch bg={bg} />}

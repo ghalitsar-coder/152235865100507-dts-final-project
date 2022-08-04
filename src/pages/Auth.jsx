@@ -133,70 +133,72 @@ const Auth = () => {
   };
 
   return (
-    <div className=" text-primary h-screen grid place-items-center">
-      <div className="__container gap-y-5 max-w-md shadow-lg rounded-lg p-5  md:max-w-lg bg-blackMovie text-whiteSmoke">
-        <div className=" text-center ">
-          <h1 className="text-4xl font-semibold ">
-            {isSignin ? " Hello Again!" : "Sign up"}
+    <div className=" text-primary  h-screen ">
+      <div className="banner grid place-items-center">
+        <div className="bg-primary text-white  gap-y-5 max-w-md shadow-lg rounded-lg p-5  md:max-w-lg bg-blackMovie text-whiteSmoke">
+          <div className=" text-center ">
+            <h1 className="text-4xl font-semibold ">
+              {isSignin ? " Hello Again!" : "Sign up"}
+            </h1>
+            <p className="text-sm text-slate-400 mt-3">
+              {isSignin
+                ? "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia, illo."
+                : "Aliquid deserunt excepturi aspernatur inventore minus eum voluptate, iste ullam quas velit."}
+            </p>
+          </div>
+
+          <form onSubmit={handleSubmit} className="flex flex-col gap-y-3">
+            <input
+              type="text"
+              fullWidth
+              variant="outlined"
+              label="Email"
+              value={data.email}
+              name="email"
+              className="p-3 border rounded-md shadow-md bg-transparent"
+              onChange={(e) => setData({ ...data, email: e.target.value })}
+            />
+            <input
+              fullWidth
+              variant="outlined"
+              type="password"
+              label="Password"
+              value={data.password}
+              name="password"
+              className="p-3 border rounded-md shadow-md bg-transparent"
+              onChange={(e) => setData({ ...data, password: e.target.value })}
+            />
+            <button
+              type="submit "
+              className=" rounded-md shadow-md font-semibold p-2 hover:bg-green-700 hover:text-white transition-all"
+            >
+              {isSignin ? "Sign in!" : "Sign up"}
+            </button>
+          </form>
+          <div className="flex my-5 gap-x-3 ">
+            <button
+              type="submit "
+              onClick={handleGoogle}
+              className="w-full rounded-md shadow-md font-semibold p-2 hover:bg-slate-700 hover:text-white transition-all"
+            >
+              Sign in with Google !
+            </button>
+
+            <button
+              type="submit "
+              onClick={handleGithub}
+              className="w-full rounded-md shadow-md font-semibold p-2 text-white bg-slate-800 hover:bg-white hover:text-black transition-all"
+            >
+              Sign in with Github !
+            </button>
+          </div>
+          <h1
+            className="text-center text-lg hover:scale-105 transition font-semibold cursor-pointer "
+            onClick={() => setIsSignin(!isSignin)}
+          >
+            {isSignin ? " Create an Account!" : "Already has account ? Sign in"}
           </h1>
-          <p className="text-sm text-slate-400 mt-3">
-            {isSignin
-              ? "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia, illo."
-              : "Aliquid deserunt excepturi aspernatur inventore minus eum voluptate, iste ullam quas velit."}
-          </p>
         </div>
-
-        <form onSubmit={handleSubmit} className="flex flex-col gap-y-3">
-          <input
-            type="text"
-            fullWidth
-            variant="outlined"
-            label="Email"
-            value={data.email}
-            name="email"
-            className="p-3 border rounded-md shadow-md bg-transparent"
-            onChange={(e) => setData({ ...data, email: e.target.value })}
-          />
-          <input
-            fullWidth
-            variant="outlined"
-            type="password"
-            label="Password"
-            value={data.password}
-            name="password"
-            className="p-3 border rounded-md shadow-md bg-transparent"
-            onChange={(e) => setData({ ...data, password: e.target.value })}
-          />
-          <button
-            type="submit "
-            className=" rounded-md shadow-md font-semibold p-2 hover:bg-green-700 hover:text-white transition-all"
-          >
-            {isSignin ? "Sign in!" : "Sign up"}
-          </button>
-        </form>
-        <div className="flex my-5 gap-x-3 ">
-          <button
-            type="submit "
-            onClick={handleGoogle}
-            className="w-full rounded-md shadow-md font-semibold p-2 hover:bg-slate-700 hover:text-white transition-all"
-          >
-            Sign in with Google !
-          </button>
-
-          <button
-            type="submit "
-            onClick={handleGithub}
-            className="w-full rounded-md shadow-md font-semibold p-2 text-white bg-slate-800 hover:bg-white hover:text-black transition-all"
-          >
-            Sign in with Github !
-          </button>
-        </div>
-        <h1
-          className="text-center text-lg hover:scale-105 transition font-semibold cursor-pointer "
-          onClick={() => setIsSignin(!isSignin)}
-        >
-          {isSignin ? " Create an Account!" : "Already has account ? Sign in"}
-        </h1>
       </div>
     </div>
   );
