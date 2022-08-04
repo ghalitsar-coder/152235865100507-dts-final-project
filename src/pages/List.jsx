@@ -93,7 +93,7 @@ const List = () => {
   const solveDatePlaceHolder = () => {
     if (form?.dates !== undefined) {
       return `${format(new Date(form?.dates?.startDate), "MMM dd")}
-    )} - ${format(new Date(form?.dates?.endDate), "MMM dd")}`;
+     - ${format(new Date(form?.dates?.endDate), "MMM dd")}`;
     }
     return `${format(new Date(), "MMM dd")}
  - ${format(new Date(), "MMM dd")}`;
