@@ -135,12 +135,12 @@ const Auth = () => {
   return (
     <div className=" text-primary  h-screen ">
       <div className="banner grid place-items-center">
-        <div className="bg-primary text-white  gap-y-5 max-w-md shadow-lg rounded-lg p-5  md:max-w-lg bg-blackMovie text-whiteSmoke">
+        <div className="bg-white/25 backdrop-blur-md text-primary grid gap-y-7 max-w-md shadow-lg rounded-lg p-5  md:max-w-lg bg-blackMovie text-whiteSmoke">
           <div className=" text-center ">
             <h1 className="text-4xl font-semibold ">
               {isSignin ? " Hello Again!" : "Sign up"}
             </h1>
-            <p className="text-sm text-slate-400 mt-3">
+            <p className="text-sm text-primary  my-3">
               {isSignin
                 ? "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia, illo."
                 : "Aliquid deserunt excepturi aspernatur inventore minus eum voluptate, iste ullam quas velit."}
