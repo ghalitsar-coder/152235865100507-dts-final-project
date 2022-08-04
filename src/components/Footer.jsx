@@ -15,22 +15,34 @@ const Footer = () => {
       <div className="container grid place-items-center grid-cols-2 lg:grid-cols-4 gap-5 ">
         <ul>
           {left.map((item) => (
-            <li key={item} className="cursor-pointer"> {item}</li>
+            <li key={item} className="cursor-pointer">
+              {" "}
+              {item}
+            </li>
           ))}
         </ul>
         <ul>
           {leftM.map((item) => (
-            <li key={item} className="cursor-pointer"> {item}</li>
+            <li key={item} className="cursor-pointer">
+              {" "}
+              {item}
+            </li>
           ))}
         </ul>
         <ul>
           {rightM.map((item) => (
-            <li key={item} className="cursor-pointer"> {item}</li>
+            <li key={item} className="cursor-pointer">
+              {" "}
+              {item}
+            </li>
           ))}
         </ul>
         <ul>
           {right.map((item) => (
-            <li key={item} className="cursor-pointer"> {item}</li>
+            <li key={item} className="cursor-pointer">
+              {" "}
+              {item}
+            </li>
           ))}
         </ul>
         <button className="px-3 py-2 border -ml-4 border-grayMovie">
@@ -39,9 +51,14 @@ const Footer = () => {
       </div>
       <span className="my-10 pb-10">
         &copy;2022 Movies,{" "}
-        <a href="https://ghalitsardev.netlify.app/" className="text-redMovie">
+        <a
+          href="https://ghalitsardev.netlify.app/"
+          className="text-primary font-semibold"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           {" "}
-          Ghalitsar{" "}
+          Ghalitsar gyasi elfaris{" "}
         </a>{" "}
         All Rights Reserved{" "}
       </span>
