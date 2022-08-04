@@ -2,21 +2,21 @@ import React from "react";
 import { bg4, bg2, bg3 } from "../assets";
 const Detail = () => {
   return (
-    <div className="container px-4 md:px-0 mx-auto pt-32 flex flex-col gap-y-14">
+    <div className="container px-4 md:px-0 mx-auto pt-32 min-h-screen flex flex-col gap-y-14">
       <div className="grid gap-y-4 place-items-center ">
         <h1 className="text-3xl   font-semibold">Village Elfaris</h1>
         <p className="text-slate-500 font-light">Bogor, Indonesia</p>
       </div>
 
-      <div className="h-[450px] bg-green-500 container gap-7 flex flex-col md:flex-row ">
-        <div className="flex-[1.3] max-h-full bg-red-500 ">
+      <div className="h-[450px]   container gap-7 flex flex-col md:flex-row ">
+        <div className="flex-[1.3] max-h-full   ">
           <img
             src={bg2}
             alt=""
             className="w-full h-full object-cover rounded-xl"
           />
         </div>
-        <div className="flex-1 max-h-full lg:h-[50%] flex flex-col gap-5 bg-blue-500 ">
+        <div className="flex-1 max-h-full lg:h-[50%] flex flex-col gap-5  ">
           <img
             src={bg3}
             alt=""
@@ -30,7 +30,7 @@ const Detail = () => {
         </div>
       </div>
 
-      <div className="flex   md:flex-row">
+      <div className="flex md:mt-10 mt-[500px]  md:flex-row">
         <div className="flex-[1.3]  grid gap-y-4 ">
           <h1 className="font-semibold mb-5 font-[Poppins]">About the place</h1>
           <p className="text-slate-400 font-light">
