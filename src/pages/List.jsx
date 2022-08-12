@@ -69,13 +69,6 @@ const List = () => {
       key: "selection",
     },
   ];
-  const [dates, setDates] = useState([
-    {
-      startDate: new Date(),
-      endDate: new Date(),
-      key: "selection",
-    },
-  ]);
 
   const solveDate = () => {
     if (form?.dates !== undefined) {
@@ -92,8 +85,7 @@ const List = () => {
   };
   const solveDatePlaceHolder = () => {
     if (form?.dates !== undefined) {
-      return `${format(new Date(form?.dates?.startDate), "MMM dd")}
-     - ${format(new Date(form?.dates?.endDate), "MMM dd")}`;
+      return `${format(new Date(form?.dates?.startDate), "MMM dd")} - ${format(new Date(form?.dates?.endDate), "MMM dd")}`;
     }
     return `${format(new Date(), "MMM dd")}
  - ${format(new Date(), "MMM dd")}`;
@@ -127,9 +119,9 @@ const List = () => {
           </div>
         </div>
       </div>
-      <div className="min-h-screen gap-x-3 flex flex-col md:flex-row container mx-auto">
+      <div className="min-h-screen gap-x-3 font-[Poppins]   flex flex-col md:flex-row container mx-auto">
         <div className=" flex-1  shadow-md md:sticky h-max top-[70px] p-2 rounded-xl  ">
-          <h1 className="text-2xl font-semibold font-[Poppins] ">Search</h1>
+          <h1 className="text-2xl font-semibold  ">Search</h1>
           <form className="grid gap-y-4  ">
             <div className="grid gap-y-2 mt-5 ">
               <label className=""> Destination </label>
@@ -159,7 +151,7 @@ const List = () => {
                   className=" w-full focus:outline-none  rounded-lg   "
                 />
               </div>
-              {form.dates !== void 0 && (
+              {/* {form.dates !== void 0 && ( */}
                 <DateRange
                   onChange={(item) => handleDate([item.selection])}
                   ranges={solveDate()}
@@ -169,7 +161,7 @@ const List = () => {
                     !showDates && "invisible"
                   } bg-red-500`}
                 />
-              )}
+              {/* // )} */}
             </div>
             <div className="grid gap-y-2">
               <ul className=" grid  border rounded-xl border-primary [&>li>div>span.option]:text-white gap-y-5 w-full h-max p-3">

@@ -1,8 +1,30 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Card from "./Card";
 import { bg2, bg4, h1, h2 } from "../assets";
+import axios from "axios";
 
 const Featured = () => {
+  useEffect(() => {
+    const cancelToken = axios.CancelToken.source();
+    const fetchData = async () => {
+      try {
+        const data = await axios.get(
+          "hotels/getByCity?cities=bandung,Papua,pangandaran,nalegong",
+          { cancelToken: cancelToken.token }
+        );
+        console.log(data);
+      } catch (err) {
+        if (axios.isCancel(err)) {
+          console.log("fetch aborted!");
+        }
+        console.log(err);
+      }
+    };
+    fetchData();
+    return () => {
+      cancelToken.cancel();
+    };
+  }, []);
   return (
     <div className="w-[80%] mx-auto">
       <div className="desc mb-5">

@@ -18,6 +18,14 @@
 // export { default as image18 } from "./images/18.jpg";
 // export { default as image19 } from "./images/19.jpg";
 
+import card1 from "./newBg/b2.jpg";
+import card2 from "./newBg/b4.jpg";
+import card3 from "./newBg/b5.jpg";
+import card5 from "./newBg/h8.jpg";
+import card6 from "./newBg/h2.jpg";
+import card7 from "./newBg/h4.jpg";
+import card8 from "./newBg/bg1.jpg";
+
 export { default as bg2 } from "./bg/nature/b2.jpg";
 export { default as bg4 } from "./bg/nature/b4.jpg";
 export { default as bg5 } from "./bg/nature/b5.jpg";
@@ -38,14 +46,6 @@ export { default as h2 } from "./newBg/18.jpg";
 export { default as n1 } from "./newBg/n1.jpg";
 export { default as n2 } from "./newBg/n2.jpg";
 export { default as n3 } from "./newBg/n3.jpg";
-// import bg2 from "./newBg/b2.jpg";
-// import bg4 from "./newBg/b4.jpg";
-// import bg5 from "./newBg/b5.jpg";
-// import bg6 from "./newBg/h2s.jpg";
-// import bg3 from "./newBg/h8.jpg";
-// import bg7 from "./newBg/h2.jpg";
-// import bg8 from "./newBg/h4.jpg";
-// import bg1 from "./newBg/bg1.jpg";
 
-// // let imagesHeader = [bg2, bg4, bg5, bg6, bg3, bg7, bg8, bg1];
-// export default [bg2, bg4, bg5,   bg3, bg7, bg8, bg1];
+let imagesHeader = [card1, card2, card3,  card5, card6, card7, card8];
+export default imagesHeader;

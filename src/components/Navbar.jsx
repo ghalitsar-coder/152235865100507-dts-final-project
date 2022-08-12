@@ -53,7 +53,7 @@ const Navbar = () => {
                 {" "}
                 <Link
                   to="/auth"
-                  className="bg-primary text-white rounded-xl px-3 py-2 "
+                  className="bg-primary text-white rounded-md px-3 py-2 "
                 >
                   Sign Up
                 </Link>
@@ -63,7 +63,7 @@ const Navbar = () => {
             location.pathname !== "/auth" && (
               <button
                 onClick={handleLogout}
-                className="bg-primary text-white rounded-xl px-3 py-2 "
+                className="bg-primary text-white rounded-md px-3 py-2 "
               >
                 Logout
               </button>
